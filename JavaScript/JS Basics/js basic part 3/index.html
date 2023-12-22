@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js basics part 3 contains:</title>
+</head>
+
+<body>
+
+    <ol>js basics part 3 contains
+        <li>DOM:Documents object Model</li>
+    </ol>
+
+    <!--    		   
+// Document objects provides the methods to select the html elements:-
+// --------------------------------------------------------------------
+//    document.getElementById();
+//    document.getElementByName()   
+//    document.getElementsByClassName();   
+//    document.queryAll();
+//    document.querySelector();
+//    document.getElmentByTagName(); -->
+
+
+    <!-- document.getElementById(); -->
+    <form>
+        <input type="text" name="f" id="f" placeholder="firstname"><br>
+        <input type="text" name="l" id="l" placeholder="lastname"> <br>
+        <button onclick="fun1()"> click me</button>
+    </form>
+
+
+    <!-- //    document.getElementByName()  -->
+    <form>
+        <input type="radio" name="gender" value="male"> Male <br>
+        <input type="radio" name="gender" value="female"> FeMale <br>
+        <!-- <input type="radio" name="gender" value="others"> others <br> -->
+        <button onclick="fun2()" > click here</button>
+    </form>  
+    
+
+    <!-- document.getElementsByClassName();   -->
+    <div id="div1">
+        <p class="para">this is p1</p>
+        <p class="para">this is p2</p>
+        <p>this is p3</p>
+        <h1 class="para"> this is h1</h1>
+    </div>
+    <div id="div2">
+        <p>this is p1</p>
+        <p>this is p2</p>
+        <p class="para">this is p3</p>
+        <h1 class="para"> this is h1 of div id div2</h1>
+    </div>
+
+
+    <!-- document.querySelector(); -->
+    <p class="p1">this is para p1 cls id : "p1"</p>
+    <p class="p2">this is para p1 cls id : "p2"</p>
+    <p class="p2">this is para p2 cls id : "p2"</p>
+    <h1>this is h1</h1>
+    <p>this is also p</p>
+
+
+    <!-- document.getElmentByTagName() -->
+    <h3>hi i dear friends i am h3 ....</h3>
+    <ol>
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ol>
+
+
+
+    <script>
+        // document.getElementById();
+        function fun1() {
+            var name = document.getElementById("l").value;
+            alert("your  last name is " + name);
+            alert("length of your  last name is " + name.length);
+        }
+
+
+        // document.getElementByName() 
+        function fun2()
+         {
+         var noOfGender=document.getElementsByName("gender").length;
+         document.write(noOfGender);
+         }
+
+    
+        // document.getElementsByClassName();
+        var parentId = document.getElementById("div1");
+        var elements = parentId.getElementsByClassName("para");
+        console.log(elements);
+        var parentId = document.getElementById("div2");
+        var elements = parentId.getElementsByClassName("para");
+        console.log(elements);
+        var first = parentId.getElementsByClassName("para")[0].style.color = 'red';
+        console.log(first);
+
+
+        // document.querySelector();
+        document.querySelector('.p1').style.background = 'yellow';
+
+        // document.queryAll();
+        var elements = document.querySelectorAll('.p2');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = 'green';
+            elements[i].style.fontSize = '40px';
+        }
+
+        //document.getElmentByTagName()
+        var p = document.getElementsByTagName('h3');
+        console.log(p);
+        for (var i = 0; i < p.length; i++) {
+            p[i].style.background = 'yellow';
+        }
+        var list = document.getElementsByTagName('li');
+        for (var i = 0; i < list.length; i++) {
+            list[i].style.color = 'blue';
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

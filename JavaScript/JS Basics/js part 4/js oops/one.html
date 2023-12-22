@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop:</title>
+</head>
+
+<body>
+    <script>
+
+        class Student {
+            //to  initilize the property of the object
+            constructor(name, dept, year) {
+                this.name = name;
+                this.dept = dept;
+                this.year = year;
+            }
+            //function / method
+            displayDetails() {
+                document.write("name is " + this.name + "<br><br>");
+                document.write("dept is " + this.dept + "<br><br>");
+                document.write("year is " + this.year + "<br><br>");
+            }
+
+            add(a, b) {
+                return a + b;
+            }
+        }
+
+        // creating 3 object for student class
+        var stu1 = new Student("sachin", "cse", 2);
+        var stu2 = new Student("john", "cse", 3);
+        var stu3 = new Student("manish", "ece", 1);
+
+        stu1.displayDetails();
+        stu2.displayDetails();
+        stu3.displayDetails();
+        document.write(stu1.add(2, 3));
+
+
+
+
+        document.write("<br><br>")
+
+        //Encapsulation:Data hiding = hiding + security.
+        // binding of variable and method into a single unit
+        //how to achive encapsulation in javascript: declare local scope variable and access it using it setter and getter function.
+
+        class Account {
+            constructor() {
+                var accountNo;
+                var accountName;
+            }
+            // setter method 
+            setAccountNo(accountNo) {
+                this.accountNo = accountNo;
+            }
+            setAccountName(accountName) {
+                this.accountName = accountName;
+            }
+            getAccountNo() {
+                return "The Account No is :" + this.accountNo + "<br>";
+            }
+            getAccountName() {
+                return "Account holder Name is:" + this.accountName + "<br><br>";
+            }
+        }
+        var account1 = new Account(); // obj created 
+        account1.setAccountNo(100959576375038);
+        account1.setAccountName("rohit sharma ");
+
+        var account2 = new Account();
+        account2.setAccountNo(101945945734);
+        account2.setAccountName("Saad iqbql attar");
+
+        document.write(account1.getAccountNo());
+        document.write(account1.getAccountName());
+        document.write(account2.getAccountNo());
+        document.write(account2.getAccountName());
+        document.write("<br><br>")
+
+
+        // object prototype:- // promotype chaning ??? y v usewd it ???
+        class Employee {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+            display() {
+                document.write("id :" + this.id + " <br>");
+                document.write("name :" + this.name + " <br>");
+
+            }
+        }
+        Employee.prototype.companyName = "HVA - Hyper Verge Accadmy ";
+
+        var emp1 = new Employee(1, "saad");
+        var emp2 = new Employee(2, "subham");
+
+        emp1.display();
+        document.write("Company Name:" + emp1.companyName + "<br>")
+
+        emp2.display();
+        document.write("Company Name:" + emp2.companyName + "<br>")
+        document.write("<br><br>")
+
+
+
+        // thow ,try and catch
+        function checkEligiblity(age) {
+            if (age < 18)
+                throw new Error("you are not eligible to vote");
+            else
+                document.write("you are eligible to vote")
+            console.log("you are eligible to vote");
+
+        }
+        function getUserAge() {
+            var age = Number(document.getElementById('age').value);
+            // checkEligiblity(age);
+            try {
+                checkEligiblity(age);
+            }
+            catch (e) {
+                document.write(e.message);
+                console.log(e.message);
+            }
+        }
+        document.write("<br><br>")
+
+
+
+
+        var id = 100;
+        var name = "rahul";
+        var msg = `
+               hello hi
+               this is javascrip
+               "java is plaform independent"
+               ${2 > 3}
+               ${2 + 6}
+           `;  
+
+        console.log(msg);
+        console.log(`your id is ${id}`);
+        console.log(`your name is ${name}`);
+
+        document.write(`your id is ${id} <br>`);
+        document.write(`your name is ${name} <br> `);
+
+        document.write(`id is ${id} name is ${name}  add is ${2 + 2}`);
+
+
+
+
+
+
+
+    </script>
+    <input type="text" name="age" id="age" placeholder="enter age">
+    <button onclick="getUserAge()"> check eligiblity</button>
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

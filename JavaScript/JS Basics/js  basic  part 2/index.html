@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js basics part 2 contains:objects,Arrays of obj,
+        ,strings</title>
+</head>
+
+<body>
+
+</body>
+
+
+<ol>js basics part 2 contains
+    <li>objects</li>
+    <li>Arrays of obj</li>
+    <li>strings</li>
+
+</ol>
+
+<script>
+
+    //objs....
+
+    var fruits = ["apple", "banana", "mango"];
+    document.write("size of array :" + fruits.length + "<br>");
+    document.write(fruits[0] + "<br>");
+    document.write(fruits[1] + "<br>");
+    document.write(fruits[2] + "<br>");
+    document.write(fruits[3] + "<br> <br>");// undefined.....variable
+    // BY USING LOOPS.....
+    for (let i = 0; i < fruits.length; i++) {
+        document.write(fruits[i] + "<br>");
+    }
+
+    //using array constructor
+    document.write("<br>")
+    var fruits3 = new Array("banana", "watermelon", "mango");
+    document.write("fruits 3 length " + fruits3.length + "<br>");
+    for (var i = 0; i < fruits3.length; i++) {
+        document.write(fruits3[i] + "<br>");
+    }
+
+    // Arrays of objects.........
+    document.write("<br>")
+    document.write("<br>")
+    const products = [
+        { id: 1, name: "hp laptop", category: "electronics", price: 87000 },
+        { id: 2, name: "pendrive", category: "electronics", price: 600 },
+        { id: 3, name: "t-shirt", category: "cloth", price: 6500 },
+        { id: 4, name: "toys", category: "toys", price: 9000 },
+        { id: 5, name: "mobile", category: "electronics", price: 72000 },
+        { id: 786, name: "KOk_speacial_item", category: "precious items", price: 9999999 }
+    ];
+    document.write("length of products  :" + products.length + "<br>");
+    document.write("<br>")
+    for (var i = 0; i < products.length; i++) {
+        document.write(products[i].id + "    " + products[i].name + "     " + products[i].category + "     " + products[i].price + "<br><br>");
+    }
+
+
+    //strings
+    // shoen here the strings are immutables.....
+    var name = "sachin";
+    document.write("your name is :" + name + "<br>");
+    document.write("your name is :" + name.concat(" tendulkar") + "<br>");
+    document.write("your name is :" + name + "<br>");
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</html>
